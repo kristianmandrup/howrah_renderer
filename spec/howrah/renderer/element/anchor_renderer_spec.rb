@@ -22,7 +22,8 @@ describe Howrah::Renderer::Element::Anchor do
       src     = 'www.google.com'
       @renderer = Howrah::Renderer::Element::Anchor.new :caption => caption, :src => src
       @renderer.render
-      @renderer.prawn_commands.first.should be_command :formatted_text_box, {:text => "<a href='#{src}'>#{caption}</a>" }            
+      @renderer.prawn_commands.first.should be_command :text, [ "<a href='#{src}'>#{caption}</a>", {:inline_format => true} ]
+      
     end
   end
 end
