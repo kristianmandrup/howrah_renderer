@@ -16,7 +16,8 @@ All special processors are subclasses of ElementRenderer as they all render elem
 * ImageRenderer
 * AnchorRenderer
 
-The reason why list has a special ListItemRenderer is due to the fact that list items must currently be rendered on their own in Prawn. There is no special prawn command to render a list. Tables on the other hand can be rendered in one go in Prawn.
+The reason why list has a special ListItemRenderer is due to the fact that list items must currently be rendered on their own in Prawn. T
+here is no special prawn command to render a list. Tables on the other hand can be rendered in one go in Prawn.
 
 ## List
 
@@ -37,3 +38,13 @@ Ordered list labels each item with a successive number or letter. One such "numb
 ### Unordered list 
 
 Ordered list labels each item with graphic, fx a circle or a square. The ListItemRenderer must given a specific style render the appropriate graphic using a prawn "draw" command.
+
+### Table
+
+The Table Renderer should use the state it receives from the Table Processor. It is up to the Table Renderer to define this contract (what do I need to render a table?).
+The Table Processor should collect state for :caption, :header, :body and :footer. This way the Table Renderer is totally decoupled from the Processor!
+The same state transfer pattern should be used for the other Renderers! State is transferred in a simple hash. 
+
+### Image 
+
+The Image renderer should receive Image state in the form of a :caption and a :src of the image.

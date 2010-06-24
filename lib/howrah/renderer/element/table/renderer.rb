@@ -5,6 +5,11 @@ module Howrah
     module Element    
       class Table < Base
         include Drawer
+
+        # :caption => 'my table', :header => ['a', 'b'], :body => [['1', 'x'], ['2', 'y]], :footer => ['', 'xy']
+        def initialize state
+          super
+        end
       
         def render
           draw_table
