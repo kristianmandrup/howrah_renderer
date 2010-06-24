@@ -1,0 +1,39 @@
+## Renderer
+
+All renderers inherit from an abstract ElementRenderer. The first inclination might be to consider having class variants for both inline and block, but the difference is really minimal (positioning of the following element), so a boolean attribute should do until proven otherwise. This leads to the following design.
+Processors and Renderers are 'joined at the hip'. The renderer must always be designed to render the state carried by the processor that calls it into action. Hence the renderer must have a reference variable to the initiating processor from creation.
+There will be NOT be a special TextRenderer class since rendering text is always the responsibility of a containing element, an ElementRenderer.
+
+* ElementRenderer
+
+## Special renderers
+
+All special processors are subclasses of ElementRenderer as they all render elements.
+
+* ListRenderer
+* ListItemRenderer
+* TableRenderer
+* ImageRenderer
+* AnchorRenderer
+
+The reason why list has a special ListItemRenderer is due to the fact that list items must currently be rendered on their own in Prawn. There is no special prawn command to render a list. Tables on the other hand can be rendered in one go in Prawn.
+
+## List
+
+Lists are divided into the following types
+
+* Definition list
+* Unordered list
+* Ordered list
+
+### Definition list
+
+Definition lists are purely a textual construct with specific default styling and positioning, including indentation for each list item. 
+
+### Ordered list
+
+Ordered list labels each item with a successive number or letter. One such "numbering style" is roman numbers, and here a gem Romans is used.
+
+### Unordered list 
+
+Ordered list labels each item with graphic, fx a circle or a square. The ListItemRenderer must given a specific style render the appropriate graphic using a prawn "draw" command.

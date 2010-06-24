@@ -1,6 +1,7 @@
-= howrah_renderer
+= Howrah Renderer
 
-Description goes here.
+Render code for various HTML Tag specific renderers and configurations for auto-creating a Tag Renderer class (if none is implemented) or 
+adding default styles to an implemented Tag Renderer.
 
 == Note on Patches/Pull Requests
  

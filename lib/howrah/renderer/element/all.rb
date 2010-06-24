@@ -1,0 +1,5 @@
+require 'howrah/renderer/element/list/renderer'
+require 'howrah/renderer/element/table/renderer'
+require 'howrah/renderer/element/image/renderer'
+require 'howrah/renderer/element/anchor/renderer'
+require 'howrah/renderer/element/form/renderer'
