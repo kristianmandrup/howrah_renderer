@@ -8,16 +8,21 @@ describe Howrah::Renderer::Element::Anchor do
     @renderer = Howrah::Renderer::Element::Anchor.new :
   end
 
-  describe '#new' do
-    @renderer = Howrah::Renderer::Element::Anchor.new :caption => 'my anchor', :src => 'www.google.com'    
-    @renderer.state.should == :caption => 'my anchor', :src => 'www.google.com'
+  describe '#new' do        
+    it "should set the state"                              
+      state = :caption => 'my anchor', :src => 'www.google.com'
+      @renderer = Howrah::Renderer::Element::Anchor.new 
+      @renderer.state.should be state
+    end
   end
     
   describe '#render' do
     it "should render an anchor" do      
-      @renderer = Howrah::Renderer::Element::Anchor.new :caption => 'my anchor', :src => 'www.google.com'
+      caption = 'my anchor'
+      src     = 'www.google.com'
+      @renderer = Howrah::Renderer::Element::Anchor.new :caption => caption, :src => src
       @renderer.render
-      @renderer.prawn_commands.first.should be_command :formatted_text_box, {:text => "<a href='www.google.com'>my anchor</a>" }            
+      @renderer.prawn_commands.first.should be_command :formatted_text_box, {:text => "<a href='#{src}'>#{caption}</a>" }            
     end
   end
 end
