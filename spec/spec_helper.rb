@@ -1,9 +1,10 @@
 require 'bundler'
 Bundler.setup(:default, :test)
 
-require 'howrah_renderer'
 require 'rspec'
 require 'rspec/autorun'
+require 'howrah_renderer'
+
 # gems
 require 'prawn_commander'
 require 'kmandrup-colorist'
