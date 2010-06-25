@@ -21,7 +21,8 @@ describe Howrah::Renderer::Element::Bold do
 
   before :each do
     @text = 'my header'
-    @renderer = Howrah::Renderer::Element::Bold.new {:text => @text}
+    @commander  = Prawn::Commander.new 
+    @renderer = Howrah::Renderer::Element::Bold.new {:text => @text}, @commander
   end
 
   describe '#new' do

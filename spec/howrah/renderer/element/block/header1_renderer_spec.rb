@@ -5,8 +5,9 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 describe Howrah::Renderer::Element::Header1 do
 
   before :each do
-    @text = 'my header'
-    @renderer = Howrah::Renderer::Element::Header1.new {:text => @text}
+    @text = 'my header'   
+    @commander  = Prawn::Commander.new 
+    @renderer = Howrah::Renderer::Element::Header1.new {:text => @text}, @commander
   end
 
   describe '#new' do

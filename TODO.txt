@@ -1,0 +1,4 @@
+# Prawn Commander
+
+Externalize as a gem and add to Renderer::Element on init.
+Also add custom command matcher to this gem!

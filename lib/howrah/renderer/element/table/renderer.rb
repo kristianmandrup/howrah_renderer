@@ -7,7 +7,7 @@ module Howrah
         include Drawer
 
         # :caption => 'my table', :header => ['a', 'b'], :body => [['1', 'x'], ['2', 'y']], :footer => ['', 'xy']
-        def initialize state
+        def initialize state, commander
           super
         end
       

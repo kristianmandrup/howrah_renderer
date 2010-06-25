@@ -13,7 +13,7 @@ module Howrah
         # Maybe list should be rendered per list item encountered, and not controlled/rendered by the containing list!
 
         # :items => [{:text => 'item 1'}, {:text => 'item 2'}, :list => {:items => ..., :list_type => :ordered}]
-        def initialize state
+        def initialize state, commander
           super
         end      
         

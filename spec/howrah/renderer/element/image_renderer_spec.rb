@@ -5,14 +5,14 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 describe Howrah::Renderer::Element::Image do
 
   before :each do
-    @renderer = Howrah::Renderer::Element::Image.new :
+    @commander  = Prawn::Commander.new 
   end
 
   describe '#new' do 
     it "should set the state"
       state = {:caption => 'my image', :src => 'image.png'}
-      @renderer = Howrah::Renderer::Element::Image.new state
-      @renderer.state.should be state
+      renderer = Howrah::Renderer::Element::Image.new state, @commander
+      renderer.state.should be state
     end
   end
     
@@ -21,11 +21,11 @@ describe Howrah::Renderer::Element::Image do
       caption = 'my image'           
       src     = 'image.png'
       state = {:caption => caption, :src => src}
-      @renderer = Howrah::Renderer::Element::Anchor.new state
-      @renderer.render
-      @renderer.prawn_commands.check do
-        first.should be_command :image, src
-        [2].should be_command :text, caption
+      renderer = Howrah::Renderer::Element::Anchor.new state
+      renderer.render
+      renderer.prawn_commands do |c|
+        c.first.should be_command :image, src
+        c[2].should be_command :text, caption
       end
     end
   end

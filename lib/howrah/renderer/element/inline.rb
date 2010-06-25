@@ -5,8 +5,8 @@ module Howrah
         
         attr_accessor :state
 
-        def initialize state
-          @state = state
+        def initialize state, commander
+          super
         end
         
         def text

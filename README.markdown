@@ -1,9 +1,17 @@
-= Howrah Renderer
+# Howrah Renderer
 
 Render code for various HTML Tag specific renderers and configurations for auto-creating a Tag Renderer class (if none is implemented) or 
 adding default styles to an implemented Tag Renderer.
 
-== Note on Patches/Pull Requests
+## Install
+
+<code>gem install howrah_renderer</code>
+
+## Usage
+
+See specs   
+
+## Note on Patches/Pull Requests
  
 * Fork the project.
 * Make your feature addition or bug fix.
@@ -13,6 +21,6 @@ adding default styles to an implemented Tag Renderer.
   (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
-== Copyright
+## Copyright
 
 Copyright (c) 2010 Kristian Mandrup. See LICENSE for details.

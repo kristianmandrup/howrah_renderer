@@ -1,6 +1,3 @@
-require 'rubygems'
-require 'rake'
-
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
@@ -9,11 +6,11 @@ begin
     gem.description = %Q{Renderers for Howrah Html to Pdf project}
     gem.email = "kmandrup@gmail.com"
     gem.homepage = "http://github.com/kristianmandrup/howrah_renderer"
-    gem.authors = ["Kristian Mandrup"]                  
-    # Should be rspec 2.0
-    # gem.add_development_dependency "rspec", ">= 1.2.9"
+    gem.authors = ["Kristian Mandrup", "Anuj"]
+    gem.add_development_dependency "rspec", ">= 2.0.0.beta13"
     gem.add_dependency "foxy_factory"
     gem.add_dependency "proxy_party"    
+    gem.add_dependency "prawn_commander", ">=0.1.2"    
     
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end

@@ -5,24 +5,25 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 describe Howrah::Renderer::Element::Anchor do
 
   before :each do
-    @renderer = Howrah::Renderer::Element::Anchor.new :
+    @commander  = Prawn::Commander.new 
   end
 
   describe '#new' do        
     it "should set the state"                              
       state = :caption => 'my anchor', :src => 'www.google.com'
-      @renderer = Howrah::Renderer::Element::Anchor.new 
-      @renderer.state.should be state
+      renderer = Howrah::Renderer::Element::Anchor.new state, @commander
+      renderer.state.should be state
     end
   end
     
   describe '#render' do
     it "should render an anchor" do      
       caption = 'my anchor'
-      src     = 'www.google.com'
-      @renderer = Howrah::Renderer::Element::Anchor.new :caption => caption, :src => src
-      @renderer.render
-      @renderer.prawn_commands.first.should be_command :text, [ "<a href='#{src}'>#{caption}</a>", {:inline_format => true} ]
+      src     = 'www.google.com'                        
+      state = :caption => caption, :src => src
+      renderer = Howrah::Renderer::Element::Anchor.new state, @commander 
+      renderer.render
+      renderer.prawn_commands.first.should be_command :text, [ "<a href='#{src}'>#{caption}</a>", {:inline_format => true} ]
       
     end
   end

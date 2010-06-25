@@ -1,9 +1,12 @@
-$LOAD_PATH.unshift(File.dirname(__FILE__))
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+require 'bundler'
+Bundler.setup(:default, :test)
+
 require 'howrah_renderer'
-require 'spec'
-require 'spec/autorun'
+require 'rspec'
+require 'rspec/autorun'
+require 'command_matchers'
 
 Spec::Runner.configure do |config|
-  
+  config.mock_with :mocha  
+  config.include(Matchers)    
 end
