@@ -3,7 +3,9 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 # should be rspec 2.0
 
 describe Howrah::Renderer::Element::Table do
-
+  let (:folder)         { 'table' } # folder to put exemplars  
+  include Exemplar
+  
   before :each do                     
     @commander  = Prawn::Commander.new
   end
@@ -29,6 +31,7 @@ describe Howrah::Renderer::Element::Table do
         c.first.should be_command :table, [header, table_data]
         c[2].should be_command :text, 'my table'
       end
+      pdf_exemplar renderer, 'table_1'
     end
   end
 end

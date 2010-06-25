@@ -3,7 +3,9 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 # should be rspec 2.0
 
 describe Howrah::Renderer::Element::Anchor do
-
+  let (:folder)         { 'inline' }   
+  include Exemplar
+  
   before :each do
     @commander  = Prawn::Commander.new 
   end
@@ -24,7 +26,8 @@ describe Howrah::Renderer::Element::Anchor do
       renderer = Howrah::Renderer::Element::Anchor.new state, @commander 
       renderer.render
       renderer.prawn_commands.first.should be_command :text, [ "<a href='#{src}'>#{caption}</a>", {:inline_format => true} ]
-      
+
+      pdf_exemplar renderer, 'anchor'
     end
   end
 end

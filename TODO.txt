@@ -1,4 +1,7 @@
-# Prawn Commander
+# Specs
 
-Externalize as a gem and add to Renderer::Element on init.
-Also add custom command matcher to this gem!
+Make sure all specs pass
+
+# Design
+
+Do lists

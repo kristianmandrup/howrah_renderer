@@ -2,8 +2,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
 # should be rspec 2.0
 
-class Howrah::Renderer::Element::Bold < Inline
-  
+class Howrah::Renderer::Element::Bold < Inline  
   def initialize state
     super
   end
@@ -18,6 +17,8 @@ class Howrah::Renderer::Element::Bold < Inline
 end
 
 describe Howrah::Renderer::Element::Bold do
+  let (:folder)         { 'inline' }   
+  include Exemplar
 
   before :each do
     @text = 'my header'
@@ -35,6 +36,7 @@ describe Howrah::Renderer::Element::Bold do
     it "should render an anchor" do
       @renderer.render
       @renderer.prawn_commands.first.should be_command :text, [ "<b>#{text}</a>", {:inline_format => true} ]
+      pdf_exemplar renderer, 'bold'
     end
   end
 end

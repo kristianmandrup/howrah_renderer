@@ -5,6 +5,7 @@ require 'howrah_renderer'
 require 'rspec'
 require 'rspec/autorun'
 require 'command_matchers'
+require 'exemplar'
 
 Spec::Runner.configure do |config|
   config.mock_with :mocha  
