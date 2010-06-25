@@ -4,6 +4,7 @@ group :default do
   gem "prawn_commander",      ">=0.1.2"
   gem "kmandrup-colorist",    ">=0.1.5"
   gem "proxy_party"
+  gem "romans"
   gem "foxy_factory",         ">=0.1.1"   
 end
 

@@ -10,6 +10,7 @@ begin
     gem.add_development_dependency "rspec", ">= 2.0.0.beta13"
     gem.add_dependency "foxy_factory"
     gem.add_dependency "proxy_party"    
+    gem.add_dependency "romans"    
     gem.add_dependency "prawn_commander", ">=0.1.2"    
     
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
